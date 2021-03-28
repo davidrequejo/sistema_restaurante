@@ -166,13 +166,15 @@ require '../vistas/header.php';
                                 </div>
                             </div>
                         </div>
+                        <div id="tbllistado_carousel">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <?php require '../vistas/footer.php'; ?>
+    <script src="delivery.js"></script>
 </body>
 
-<?php
-require '../vistas/footer.php';
-?>

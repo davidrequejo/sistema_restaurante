@@ -65,5 +65,3 @@ require '../vistas/header.php';
 <?php
 require '../vistas/footer.php';
 ?>
-
- 
