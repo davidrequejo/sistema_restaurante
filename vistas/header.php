@@ -8,8 +8,8 @@
     <!-- Font bootstrap -->
 <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
-<link rel="stylesheet" href="../public/css/font-awesome.css">
-
+<!-- <link rel="stylesheet" href="../public/css/font-awesome.css"> -->
+<link rel="stylesheet" href="../public/fontawesome/css/all.css">
 <!-- Font navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="../public/images/logo-principal.png" alt="" style="width: 15%;">

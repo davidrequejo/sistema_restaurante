@@ -7,4 +7,6 @@
 <script src="../public/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../public/js/jquery.min.js"></script>
 
+<script src="../public/fontawesome/js/all.js"></script>
+
 </html>

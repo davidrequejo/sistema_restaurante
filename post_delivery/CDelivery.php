@@ -5,7 +5,7 @@ require_once 'MDelivery.php';
 
 $delivery= new MDelivery();
 
-$idgaleria = isset($_POST["idgaleria"])?limpiarCadena($_POST["idgaleria"]):"";
+// $idgaleria = isset($_POST["idgaleria"])?limpiarCadena($_POST["idgaleria"]):"";
 $titulo = isset($_POST["titulo"])?limpiarCadena($_POST["titulo"]):"";
 $descripcion = isset($_POST["descripcion"])?limpiarCadena($_POST["descripcion"]):"";
 $foto = isset($_POST["foto"])?limpiarCadena($_POST["foto"]):"";
@@ -31,8 +31,8 @@ switch($op){
     break;
 
 	case 'mostrar':
-
-        $rspta = $delivery->mostrar($idgaleria);
+        $id_pedido = $_GET["id"];
+        $rspta = $delivery->mostrar($id_pedido);
         
         echo json_encode($rspta);
 	break;
