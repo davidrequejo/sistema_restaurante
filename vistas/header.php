@@ -8,9 +8,14 @@
     <!-- Font bootstrap -->
 <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
+<<<<<<< HEAD
 <link rel="stylesheet" href="../public/css/font-awesome.css">
 <link rel="stylesheet" href="../public/css/jquery.dataTables.min.css">
 
+=======
+<!-- <link rel="stylesheet" href="../public/css/font-awesome.css"> -->
+<link rel="stylesheet" href="../public/fontawesome/css/all.css">
+>>>>>>> 8f7d26e6338618c0d4ee01b30549d2a15f66e4bf
 <!-- Font navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="../public/images/logo-principal.png" alt="" style="width: 15%;">

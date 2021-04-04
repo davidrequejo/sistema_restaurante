@@ -8,4 +8,6 @@
 <script src="../public/js/jquery.min.js"></script>
 <script src="../public/js/jquery.dataTables.min.js"></script>
 
+<script src="../public/fontawesome/js/all.js"></script>
+
 </html>

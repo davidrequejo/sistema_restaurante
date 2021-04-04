@@ -26,7 +26,7 @@ require '../vistas/header.php';
                                     <div class="form-group has-feedback2">
                                         <label class="control-label"></label>
                                         <input style=" background-color: #FFFFBF;" type="text" class="form-control" name="busquedaproductov" id="busquedaproductov" onkeyup="this.value=this.value.toUpperCase();" autocomplete="off" placeholder="BUSCAR CLIENTE">
-                                        <i class="fa fa-search form-control-feedback2"></i>
+                                        <i class="fa fa-search " style="font-size: 10px !important;"></i>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@ require '../vistas/header.php';
                                     <div class="form-group has-feedback2">
                                         <label class="control-label"></label>
                                         <input style=" background-color: #FFFFBF;" type="text" class="form-control" name="busquedaproductov" id="busquedaproductov" onkeyup="this.value=this.value.toUpperCase();" autocomplete="off" placeholder="Realice la Búsqueda del Producto por Nombre">
-                                        <i class="fa fa-search form-control-feedback2"></i>
+                                        <i class="fa fa-search "></i>
                                     </div>
                                 </div>
                             </div>

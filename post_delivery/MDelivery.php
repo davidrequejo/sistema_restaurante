@@ -22,8 +22,8 @@
             return ejecutarConsulta($sql);
         }
 
-        public function mostrar($idcarousel){
-            $sql="SELECT * FROM carousel WHERE idcarousel='$idcarousel'";
+        public function mostrar($id_pedido){
+            $sql="SELECT * FROM pedido WHERE id_pedido='$id_pedido'";
             return ejecutarConsultaSimpleFila($sql);
         }
 
