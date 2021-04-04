@@ -9,27 +9,38 @@ $op = $_GET["op"];
 
 switch ($op) {
 
-    case 'listar':
-        $rspta = $MVentas->listar();
+    case 'listar_salas':
+        $rspta = $MVentas->listar_salas();
         $data = array();
         $id = 0;
 
         while ($reg = pg_fetch_object($rspta)) {
             $id++;
             $data[] = array(
-                "0" => $id,
-                "1" => $reg->nombre,
-                "2" => $reg->estado,
-                "3" => $reg->id_sala
+                "id" => $id,
+                "nombre" => $reg->nombre
             );
         }
-        $results = array(
-            "sEcho" => 1, //Información para el datatables
-            "iTotalRecords" => count($data), //enviamos el total registros al datatable
-            "iTotalDisplayRecords" => count($data), //enviamos el total registros a visualizar
-            "aaData" => $data
-        );
-        echo json_encode($results);
+        echo json_encode($data);
+
+    break;
+
+    case 'listar_mesas':
+        $id_sala = $_POST["id_sala"];
+        $rspta = $MVentas->listar_mesas($id_sala);
+        $data = array();
+        $id = 0;
+
+        while ($reg = pg_fetch_object($rspta)) {
+            $id++;
+            $data[] = array(
+                "id" => $id,
+                "nombre" => $reg->nombre,
+                "sala" => $reg->sala,
+            );
+        }
+
+        echo json_encode($data);
 
         break;
 }

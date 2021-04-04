@@ -14,7 +14,7 @@
 }
 .contenido{
     padding: 15px;
-    background: #d8d9dc; 
+    background: #edf1f5; 
     min-height: calc(100vh - 167px);
 }
 .cardpequeño{
@@ -48,6 +48,12 @@
     background-color:rgb(159, 70, 89)!important;
 }
 
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 /*Fin General  
 ========================
 Inicio Post delivery*/
@@ -86,16 +92,25 @@ Inicio Post delivery*/
 ========================
 inicio Post ventas*/
 
-.selectedGat {
+.alseleccionar{
+    cursor: pointer;
+    text-align: center;
+    margin: 5px 1px;
+    padding: 10px 20px;
     background-color: #6B6B6B;
     color: #E2E2E2;
     border-bottom: 3px solid #f65e48;
+    border-radius: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 500;
+    padding-bottom: 7px;
 }
 
 .categories {
     cursor: pointer;
     text-align: center;
-    margin: 5px 0;
+    margin: 5px 1px;
     padding: 10px 20px;
     background-color: #E2E2E2;
     border-radius: 3px;

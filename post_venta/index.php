@@ -33,38 +33,53 @@ require '../vistas/header.php';
                         <h4 class="card-title text-white stiloh4"><i class="fa fa-tasks"></i> Mesas/Productos</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row-horizon">
-                            <span class="categories" id="SALA PRINCIPAL">SALA PRINCIPAL</span>
-                            <span class="categories" id="SALA SECUNDARIA">SALA SECUNDARIA</span>
-                            <span class="categories" id="SALA BALCONES">SALA BALCONES</span>
+                        <div class="row-horizon" id="salas">
+                            <span class="categories">'+value.nombre+'</span>
+                            <span class="categories">'+value.nombre+'</span>
+                            <span class="categories">'+value.nombre+'</span>
                         </div>
                         <br>
                         <div>
-                            <div>
-                                <a class="a_mesas">
-                                    <div class="users-list-name " title="MESA 1" style="cursor:pointer;">
-                                        <div>
+                            <div class="row-vertical-mesas" id="mesas">
 
-                                            <div class="style_mesas">
-                                                <img src="../public/images/mesa.png" class="imagen_mesa">
-                                            </div>
-
-                                        </div>
-                                        <center><strong>MESA 1</strong></center>
-                                    </div>
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-             <div id="hola">
+            <div id="hola">
             </div>
         </div>
     </div>
     <?php
     require '../vistas/footer.php';
     ?>
-    <script src="venta.js">    </script>
-</body>
+    <script src="venta.js"> </script>
 
+    <script>
+
+        // Obtenemos todos nuestros elementos del árbol DOM 
+// con la clase "categories"
+var elementos = document.querySelectorAll('categories');
+
+// Recorremos cada uno de nuestros elementos
+elementos.forEach(function(elemento) {
+
+  // Agregamos un listener a cada elemento
+  elemento.addEventListener('click', function() {
+
+    console.log('Elemento ' + id + ' clickeado');
+    // Realizamos el toggle de la clase
+    elemento.classList.toggle('alseleccionar');
+  });
+  
+});
+
+        var categories = document.getElementsByClassName("categories");
+        for (var i = 0; i < categories.length; i++) {
+            categories[i].classList.remove("categories");
+            categories[i].classList.add("alseleccionar");
+            console.log('aaaaaaaaaaaaaaaaaaa');
+        }
+    </script>
+</body>

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="../public/css/font-awesome.css">
+<link rel="stylesheet" href="../public/css/jquery.dataTables.min.css">
 
 <!-- Font navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,11 +29,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="../post_delivery/index.php" tabindex="-1" >POS Delivery</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../cosinero/index.php" tabindex="-1" >Vista Cosinero</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>
 </head>

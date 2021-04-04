@@ -7,54 +7,17 @@ Class MVentas{
 
 	}
 
-	/*public function insertar($titulo,$descripcion,$foto,$fechaActual){
-		$sql="INSERT INTO ".
-		"comunicados(titulo,descripcion,foto,fecha) ".
-		"VALUES ('$titulo','$descripcion','$foto','$fechaActual')";
+	public function listar_salas(){
+		$sql=" SELECT id_sala,nombre,estado FROM sala WHERE estado='0' ";
 		return ejecutarConsulta($sql);
 	}
 
-	public function editar($idcomunicado,$titulo,$descripcion,$foto,$fechaActual){
-		$sql="UPDATE comunicados SET ".
-				 "titulo='$titulo',descripcion='$descripcion',foto='$foto',fecha='$fechaActual' ".
-				 "WHERE idcomunicado='$idcomunicado'";
+	public function listar_mesas($id_sala){
+		$sql="SELECT M.nombre,M.id_mesa,s.nombre AS sala 
+		FROM mesa AS m JOIN sala AS s ON M.id_sala=s.id_sala 
+		WHERE s.id_sala='$id_sala'  ORDER BY id_mesa ASC";
 		return ejecutarConsulta($sql);
 	}
-
-	public function mostrar($idcomunicado){
-		$sql="SELECT * FROM comunicados WHERE idcomunicado='$idcomunicado'";
-		return ejecutarConsultaSimpleFila($sql);
-	}*/
-
-	public function listar(){
-		$sql="SELECT * FROM mesa ORDER BY id_mesa";
-		return ejecutarConsulta($sql);
-	}
-
-	/*public function nombreFoto($idcomunicado)
-    {
-        $sql = "SELECT foto FROM comunicados WHERE idcomunicado='$idcomunicado'";
-        return ejecutarConsulta($sql);
-    }
-
-
-	public function eliminar($idcomunicado){
-		$sql = "DELETE FROM comunicados WHERE idcomunicado = '$idcomunicado'";
-		return ejecutarConsulta($sql);
-	}
-
-	public function desactivar($idcomunicado){
-		$sql = "UPDATE comunicados SET estado='1' WHERE idcomunicado = '$idcomunicado'";
-		return ejecutarConsulta($sql);
-	}
-
-	public function activar($idcomunicado){
-		$sql = "UPDATE comunicados SET estado='0' WHERE idcomunicado = '$idcomunicado'";
-		return ejecutarConsulta($sql);
-	}*/
-
-
-	
 
 }
 ?>
