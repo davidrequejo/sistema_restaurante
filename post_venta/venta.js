@@ -2,7 +2,7 @@ function init(){
 
 
     listar_mesas();
-   // listar_salas();
+   listar_salas();
 
 };
 
@@ -10,7 +10,7 @@ function limpiar() {
     $("#mesas").val("");
 }
 
-/*function listar_salas(){
+function listar_salas(){
 
     $.post("CVenta.php?op=listar_salas",{}, function(data, status){
         data=JSON.parse(data);
@@ -18,19 +18,18 @@ function limpiar() {
         $.each(data, function(index, value){
 
             var salas =''+
-            '<span class="categories">'+value.nombre+'</span>'+
+            '<span class="categories" onclick="'+listar_mesas(value.id)+'">'+value.nombre+'</span>'+
             '';
             $("#salas").append(salas);
-            console.log(salas);
 
         });
     })
 
-}*/
+}
 
 
 function listar_mesas(id_sala) {
-    id_sala =1;
+    //id_sala =1;
     console.log(id_sala);
     $.post("CVenta.php?op=listar_mesas", {id_sala:id_sala}, function(data, status) {
       data = JSON.parse(data);
