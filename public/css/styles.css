@@ -89,11 +89,11 @@ Inicio Post delivery*/
 ========================
 inicio Post ventas*/
 
-/*.paint_select_span {
-    background-color: #6B6B6B;
-    color: #E2E2E2;
-    border-bottom: 3px solid #f65e48;
-}*/
+.paint_select_span {
+    background-color: #6B6B6B !important;
+    color: #E2E2E2 !important;
+    border-bottom: 3px solid #f65e48 !important;
+}
 
 .categories {
     cursor: pointer;

@@ -2,9 +2,6 @@
 require '../vistas/header.php';
 ?>
 
-<link rel="stylesheet" href="../public/css/styles.css">
-
-
 <body>
     <div style="padding: 11px 30px;">
 
