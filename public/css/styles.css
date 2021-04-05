@@ -72,10 +72,7 @@ Inicio Post delivery*/
     color: white;
 }
 
-.has-feedback2 label ~ .form-control-feedback2 {
-    top: 23px;
-    left: 13px
-}
+
 .form-control {
     padding-left: 28px!important;
 }
@@ -92,20 +89,11 @@ Inicio Post delivery*/
 ========================
 inicio Post ventas*/
 
-.alseleccionar{
-    cursor: pointer;
-    text-align: center;
-    margin: 5px 1px;
-    padding: 10px 20px;
+/*.paint_select_span {
     background-color: #6B6B6B;
     color: #E2E2E2;
     border-bottom: 3px solid #f65e48;
-    border-radius: 3px;
-    text-transform: uppercase;
-    display: inline-block;
-    font-weight: 500;
-    padding-bottom: 7px;
-}
+}*/
 
 .categories {
     cursor: pointer;

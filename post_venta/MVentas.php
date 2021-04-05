@@ -8,7 +8,7 @@ Class MVentas{
 	}
 
 	public function listar_salas(){
-		$sql=" SELECT id_sala,nombre,estado FROM sala WHERE estado='0' ";
+		$sql=" SELECT id_sala,nombre,estado FROM sala WHERE estado='0' ORDER BY id_sala ASC ";
 		return ejecutarConsulta($sql);
 	}
 

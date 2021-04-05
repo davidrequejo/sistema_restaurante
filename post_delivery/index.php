@@ -156,12 +156,5 @@ require '../vistas/header.php';
     <?php require '../vistas/footer.php'; ?>
     <script src="delivery.js"></script>
 
-    <style>
-        .paint_select_span {
-            background-color: #6B6B6B;
-            color: #E2E2E2;
-            border-bottom: 3px solid #f65e48;
-        }
-    </style>
 </body>
 

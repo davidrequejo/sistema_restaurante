@@ -12,12 +12,12 @@ switch ($op) {
     case 'listar_salas':
         $rspta = $MVentas->listar_salas();
         $data = array();
-        $id = 0;
+       // $id= 0;
 
         while ($reg = pg_fetch_object($rspta)) {
-            $id++;
+            //$id++;
             $data[] = array(
-                "id" => $id,
+                "id_sala" => $reg->id_sala,
                 "nombre" => $reg->nombre
             );
         }
@@ -29,12 +29,12 @@ switch ($op) {
         $id_sala = $_POST["id_sala"];
         $rspta = $MVentas->listar_mesas($id_sala);
         $data = array();
-        $id = 0;
+       // $id = 0;
 
         while ($reg = pg_fetch_object($rspta)) {
-            $id++;
+           // $id++;
             $data[] = array(
-                "id" => $id,
+                "id_sala" => $id_sala,
                 "nombre" => $reg->nombre,
                 "sala" => $reg->sala,
             );
