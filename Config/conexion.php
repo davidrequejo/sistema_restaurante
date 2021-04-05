@@ -1,4 +1,4 @@
-<?php $conn = "host=localhost port=5432 dbname=sistema_restaurante user=postgres password=1234 options='--client_encoding=UTF8'";
+<?php $conn = "host=localhost port=5432 dbname=sistema_restaurante user=postgres password=1234567890 options='--client_encoding=UTF8'";
 $conexion = pg_connect($conn);
 
 if(!$conexion) {

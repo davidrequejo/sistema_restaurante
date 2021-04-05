@@ -7,8 +7,13 @@
 
         }
 
-        public function listar(){
-            $sql="SELECT * FROM pedido ORDER BY id_pedido";
+        public function listar_salas(){
+            $sql="SELECT * FROM sala ORDER BY id_sala";
+            return ejecutarConsulta($sql);
+        }
+
+        public function listar_mesas($id_sala){
+            $sql="SELECT * FROM mesa WHERE id_sala ='$id_sala' ORDER BY id_mesa";
             return ejecutarConsulta($sql);
         }
 
@@ -23,7 +28,7 @@
         }
 
         public function mostrar($id_pedido){
-            $sql="SELECT * FROM pedido WHERE id_pedido='$id_pedido'";
+            $sql="SELECT * FROM categoria WHERE id_categoria ='$id_pedido'";
             return ejecutarConsultaSimpleFila($sql);
         }
 
