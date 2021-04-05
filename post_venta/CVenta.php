@@ -25,8 +25,50 @@ switch ($op) {
 
     break;
 
+    case 'listar_categorias':
+        $rspta = $MVentas->listar_categorias();
+        $data = array();
+       // $id= 0;
+
+        while ($reg = pg_fetch_object($rspta)) {
+            //$id++;
+            $data[] = array(
+                "id_categoria" => $reg->id_categoria,
+                "nombre" => $reg->nombre
+            );
+        }
+        echo json_encode($data);
+
+    break;
+
+    case 'listar_producto':
+        $id_categoria = $_POST["id_categoria"];
+        if ($id_categoria =='0') {
+            $rspta = $MVentas->listar_producto_all();
+        } else {
+            $rspta = $MVentas->listar_producto($id_categoria);
+        }
+
+        $data = array();
+       // $id = 0;
+
+        while ($reg = pg_fetch_object($rspta)) {
+           // $id++;
+            $data[] = array(
+                "id_producto" => $reg->id_producto,
+                "precio_soles" => $reg->precio_soles,
+                "precio_dolar" => $reg->precio_dolar,
+                "id_categoria" => $reg->id_categoria
+            );
+        }
+
+        echo json_encode($data);
+
+    break;
+
     case 'listar_mesas':
         $id_sala = $_POST["id_sala"];
+
         $rspta = $MVentas->listar_mesas($id_sala);
         $data = array();
        // $id = 0;
@@ -34,7 +76,7 @@ switch ($op) {
         while ($reg = pg_fetch_object($rspta)) {
            // $id++;
             $data[] = array(
-                "id_sala" => $id_sala,
+                "id_sala" => $reg->id_mesa,
                 "nombre" => $reg->nombre,
                 "sala" => $reg->sala,
             );
@@ -42,5 +84,5 @@ switch ($op) {
 
         echo json_encode($data);
 
-        break;
+    break;
 }

@@ -28,23 +28,25 @@ require '../vistas/header.php';
                 </div>
             </div>
             <div class="col-12  col-sm-12  col-md-12  col-lg-7  col-xl-7 col-xxl-7 cardgrande">
+
                 <div class="card clasecard" id="card_mesas">
                     <div class="card-header colorcarhead">
-                        <h4 class="card-title text-white stiloh4"><i class="fa fa-tasks"></i> Mesas/Productos</h4>
+                        <h4 class="card-title text-white stiloh4" id="titulo_card"><i class="fa fa-tasks"></i> Mesas/Productos</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row-horizon" id="salas">
+                        <div class="row-horizon" id="salas_categorias">
 
                         </div>
                         <br>
                         <div>
-                            <div class="row-vertical-mesas" id="mesas">
+                            <div class="row-vertical-mesas" id="mesas_productos">
 
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card clasecard" id="card_producto">
+
+                <!--<div class="card clasecard" id="card_producto">
                     <div class="card-header colorcarhead">
                         <h4 class="card-title text-white stiloh4"><i class="fa fa-tasks"></i> Mesas/Productos</h4>
                     </div>
@@ -78,7 +80,7 @@ require '../vistas/header.php';
                                 <div class="row row-vertical">
 
                                     <div>
-                                        <div id="1">
+
                                             <div class="darkblue-panel pn" title="LOMITO DE RES | (ASADOS)">
                                                 <div class="darkblue-header">
                                                     <div id="proname" class="text-white">LOMITO DE RES</div>
@@ -92,7 +94,7 @@ require '../vistas/header.php';
                                                 </div>
 
                                             </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -100,21 +102,13 @@ require '../vistas/header.php';
                         <div id="tbllistado_carousel">
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div id="productos">
 
             </div>
         </div>
     </div>
-
-    <style>
-        .paint_select_span {
-            background-color: #6B6B6B;
-            color: #E2E2E2;
-            border-bottom: 3px solid #f65e48;
-        }
-    </style>
     <?php
     require '../vistas/footer.php';
     ?>
