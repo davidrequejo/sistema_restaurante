@@ -84,10 +84,36 @@ Inicio Post delivery*/
     pointer-events: none;
     color: #777777;
 }
+.clase_buscador_icono{
+    border-top-color: #676464;
+    border-right-color: #ffffbf;
+    border-bottom-color: #676464;
+    border-left-color: #676464;
+
+}
+.clase_buscador_input{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FFFFBF;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-color: #676464;
+    border-right-color: #676464;
+    border-bottom-color: #676464;
+    border-left-color: #ffffbf;
+
+}
+
 
 /* fin Post delivery
 ========================
 inicio Post ventas*/
+.pn {
+    height: 260px;
+    width: 154px;
+    cursor: pointer;
+    box-shadow: 0 2px 1px rgb(0 0 0 / 20%);
+}
 
 .paint_select_span {
     background-color: #6B6B6B !important;

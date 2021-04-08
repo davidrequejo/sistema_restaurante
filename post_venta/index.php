@@ -39,8 +39,10 @@ require '../vistas/header.php';
                         </div>
                         <br>
                         <div>
-                            <div class="row-vertical-mesas" id="mesas_productos">
-
+                            <div class="row-vertical-mesas" id="mesas_productos">                    
+                            </div>
+                            
+                            <div class="row row-vertical" id="productos">
                             </div>
                         </div>
                     </div>

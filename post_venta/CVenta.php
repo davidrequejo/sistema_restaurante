@@ -18,7 +18,8 @@ switch ($op) {
             //$id++;
             $data[] = array(
                 "id_sala" => $reg->id_sala,
-                "nombre" => $reg->nombre
+                "nombre" => $reg->nombre,
+                "stdo_list_default" => $reg->stdo_list_default
             );
         }
         echo json_encode($data);
@@ -56,6 +57,7 @@ switch ($op) {
            // $id++;
             $data[] = array(
                 "id_producto" => $reg->id_producto,
+                "nombre" => $reg->nombre,
                 "precio_soles" => $reg->precio_soles,
                 "precio_dolar" => $reg->precio_dolar,
                 "id_categoria" => $reg->id_categoria
