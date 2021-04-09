@@ -138,3 +138,26 @@ inicio Post ventas*/
 
 /* fin Post ventas*/
 
+/* ccs para productos y mesas */
+.a_mesas{
+    float: left; 
+    margin-right: 4px; 
+    display: block;
+}
+
+.style_mesas{
+    width: 126px;
+    height: 126px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background:#5CD878;
+}
+
+.imagen_mesa{
+    display:inline;
+    margin:22px;
+    float:left;
+    width:88px;
+    height:70px;
+}
