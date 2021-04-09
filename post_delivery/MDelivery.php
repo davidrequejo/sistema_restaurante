@@ -17,6 +17,23 @@
             return ejecutarConsulta($sql);
         }
 
+        public function listar_categorias(){
+            $sql="SELECT * FROM categoria WHERE estado='0' ORDER BY id_categoria ASC ";
+            return ejecutarConsulta($sql);
+        }
+    
+        public function listar_producto($id_categoria){
+            $sql="SELECT * FROM producto WHERE id_categoria='$id_categoria' AND estado='0' ORDER BY id_producto DESC";
+            return ejecutarConsulta($sql);
+        }
+        
+        public function listar_producto_all(){
+            $sql=" SELECT * FROM producto WHERE estado='0' ORDER BY id_producto DESC";
+            return ejecutarConsulta($sql);
+        }
+
+        // ------------------------------------------------------------------------------
+
         public function insertar($titulo,$foto){
             $sql="INSERT INTO carousel (titulo,foto,estado) VALUES ('$titulo','$foto','0')";
             return ejecutarConsulta($sql);

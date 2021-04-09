@@ -1,102 +1,141 @@
 <?php
-  if (strlen(session_id()) < 1)
-    session_start();
 
-  require_once 'MDelivery.php';
+    if (strlen(session_id()) < 1) {  session_start();  }
 
-  $delivery   = new MDelivery();
+    require_once 'MDelivery.php';
 
-  $titulo     = isset($_POST["titulo"])?limpiarCadena($_POST["titulo"]):"";
+    $delivery = new MDelivery();
 
-  $descripcion= isset($_POST["descripcion"])?limpiarCadena($_POST["descripcion"]):"";
+    $titulo = isset($_POST["titulo"]) ? limpiarCadena($_POST["titulo"]) : "";
 
-  $foto       = isset($_POST["foto"])?limpiarCadena($_POST["foto"]):"";
+    $descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"]) : "";
 
-  $op         = $_GET["op"];
+    $foto = isset($_POST["foto"]) ? limpiarCadena($_POST["foto"]) : "";
 
-  switch($op){
+    $op = $_GET["op"];
 
-    case 'listar-sala':
+    switch ($op) {
+        case 'listar_salas':
+            $rspta = $delivery->listar_salas();
 
-      $rspta = $delivery->listar_salas();
+            $data = [];
 
-      $data = Array();
+            while ($reg = pg_fetch_object($rspta)) {
+                $data[] = [
+                    "id_sala" => $reg->id_sala,
+                    "nombre" => $reg->nombre,
+                    "estado" => $reg->estado,
+                    "created_at" => $reg->created_at,
+                    "stdo_list_default" => $reg->stdo_list_default,
+                ];
+            }
 
-      while ($reg = pg_fetch_object($rspta)){ 
+            echo json_encode($data);
 
-        $data[]=array(
-          "id_sala" => $reg->id_sala,
-          "nombre" => $reg->nombre,
-          "estado" => $reg->estado,
-          "created_at" => $reg->created_at,        
-        );
-      }
-      
-      echo json_encode($data);
+        break;
 
-    break;
+        case 'listar_mesas':
+            $id_sala = $_POST["id_sala"];
 
-    case 'listar-mesas':
-      $id_sala       = $_POST["id_sala"] ;
+            $rspta = $delivery->listar_mesas($id_sala);
 
-      $rspta = $delivery->listar_mesas($id_sala);
+            $data = [];
 
-      $data = Array();
+            while ($reg = pg_fetch_object($rspta)) {
+                $data[] = [
+                    "id_mesa" => $reg->id_mesa,
+                    "nombre" => $reg->nombre,
+                    "id_sala" => $reg->id_sala,
+                    "estado" => $reg->estado,
+                    "created_at" => $reg->created_at,
+                ];
+            }
 
-      while ($reg = pg_fetch_object($rspta)){ 
+            echo json_encode($data);
 
-        $data[]=array(
-          "id_mesa" => $reg->id_mesa,
-          "nombre" => $reg->nombre,
-          "id_sala" => $reg->id_sala,
-          "estado" => $reg->estado,
-          "created_at" => $reg->created_at,        
-        );
-      }
-      
-      echo json_encode($data);
+        break;
 
-    break;
-    
-    // case 'mostrar':
-    //   $id_pedido = $_GET["id"];
-    //   $rspta = $delivery->mostrar($id_pedido);
-      
-    //   echo json_encode($rspta);
-    // break;
+        case 'listar_categorias':
 
-    // case 'guardaryeditar':   
+            $rspta = $delivery->listar_categorias();
 
-    //   if (empty($idgaleria)){
+            $data = [];
 
-    //     $rspta=$delivery->insertar($titulo,$descripcion,$foto);
+            while ($reg = pg_fetch_object($rspta)) {
 
-    //     echo $rspta;
-    //   }else {         
+                $data[] = [
+                    "id_categoria" => $reg->id_categoria,
+                    "nombre" => $reg->nombre,
+                ];
+            }
 
-    //       $rspta=$delivery->editar($idgaleria,$titulo,$descripcion,$foto);
+            echo json_encode($data);
+        break;
 
-    //       echo $rspta;
-    //   }
-    //   break;
-  
-    // case 'desactivar':
+        case 'listar_producto':
 
-    //   $rspta=$delivery->desactivar($idgaleria);
+            $id_categoria = $_POST["id_categoria"];
 
-    //   echo $rspta;
-    // break;
+            if ($id_categoria == '0') {
+                $rspta = $delivery->listar_producto_all();
+            } else {
+                $rspta = $delivery->listar_producto($id_categoria);
+            }
 
-    // case 'activar':
+            $data = [];
 
-    //   $rspta=$delivery->activar($idgaleria);
+            while ($reg = pg_fetch_object($rspta)) {
+                
+                $data[] = [
+                    "id_producto" => $reg->id_producto,
+                    "nombre" => $reg->nombre,
+                    "precio_soles" => $reg->precio_soles,
+                    "precio_dolar" => $reg->precio_dolar,
+                    "id_categoria" => $reg->id_categoria,
+                ];
+            }
 
-    //   echo $rspta;
-    // break;
+            echo json_encode($data);
+        break;
+        // case 'mostrar':
+        //   $id_pedido = $_GET["id"];
+        //   $rspta = $delivery->mostrar($id_pedido);
 
-    default :
-      echo 'ERROR AJAX CATEGORIA SIN OP';
-    break;
-  }
+        //   echo json_encode($rspta);
+        // break;
+
+        // case 'guardaryeditar':
+
+        //   if (empty($idgaleria)){
+
+        //     $rspta=$delivery->insertar($titulo,$descripcion,$foto);
+
+        //     echo $rspta;
+        //   }else {
+
+        //       $rspta=$delivery->editar($idgaleria,$titulo,$descripcion,$foto);
+
+        //       echo $rspta;
+        //   }
+        //   break;
+
+        // case 'desactivar':
+
+        //   $rspta=$delivery->desactivar($idgaleria);
+
+        //   echo $rspta;
+        // break;
+
+        // case 'activar':
+
+        //   $rspta=$delivery->activar($idgaleria);
+
+        //   echo $rspta;
+        // break;
+
+        default:
+            echo 'ERROR AJAX CATEGORIA SIN OP';
+        break;
+    }
 
 ?>
