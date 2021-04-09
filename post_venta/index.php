@@ -2,10 +2,6 @@
 require '../vistas/header.php';
 ?>
 
-<link rel="stylesheet" href="../public/css/styles.css">
-<link rel="stylesheet" href="post_venta.css">
-
-
 <body>
     <div style="padding: 11px 30px;">
 

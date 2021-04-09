@@ -4,8 +4,6 @@
 require '../vistas/header.php';
 ?>
 
-<link rel="stylesheet" href="post_delivery.css">
-
 <body>
     <div style="padding: 11px 30px;">
 
